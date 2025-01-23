@@ -1,9 +1,11 @@
 import express from 'express';
+import bodyParser from 'body-parser';
+import authRoutes from './routes/authRoutes'
 
 const app = express();
 
-// Middleware
-app.use(express.json());
+app.use(bodyParser.json());
 
+app.use('/api/v1/auth', authRoutes);
 
 export default app;
