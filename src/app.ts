@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import authRoutes from './routes/authRoutes'
 import adminRoutes from './routes/adminRoutes'
 import articlesRoutes from './routes/articlesRoutes'
+import userRoutes from './routes/userRoutes'
 import morgan from 'morgan';
 import path from 'path';
 
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/admin', adminRoutes)
 app.use('/articles', articlesRoutes);
+app.use('/', userRoutes)
 
 
 export default app;
